@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+/* Common style for all pages */
 body{
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
     font-size: 20px;
@@ -15,4 +16,19 @@ ul li{
     display: inline-block;
     margin: 2em 1em 0 1em;
     list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+a:visited{
+    color: black;
+}
+section{
+    text-align: center;
+}
+.header{
+    font-weight: bolder;
+    font-size: 2em;
 }
