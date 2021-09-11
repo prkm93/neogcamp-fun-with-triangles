@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
-/* Common style for all pages */
+/* Common styles for all pages */
 body{
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
@@ -29,6 +29,5 @@ section{
     text-align: center;
 }
 .header{
-    font-weight: bolder;
     font-size: 2em;
 }
