@@ -65,7 +65,7 @@ const calculateScore = () => {
     outputResult.innerHTML = `<h2>Your score is ${score}</h2>`
 }
 
-if (submitBtn){
+if (submitBtn) {
     submitBtn.addEventListener('click', calculateScore);
 }
 document.addEventListener('DOMContentLoaded', renderQuestions);
@@ -75,17 +75,25 @@ document.addEventListener('DOMContentLoaded', renderQuestions);
 
 const anglesValue = document.querySelector('#is-triangle');
 const btnTriangle = document.querySelector('#btn-submit-triangle');
+const triangleOutput = document.querySelector('#output-triangle');
 
 const checkIfTriangle = (e) => {
+    
     e.preventDefault();
-    const angles = [];
-    const formData = new FormData(anglesValue);
-
-    for(let i in formData.entries()){
-        
+    
+    const angle1 = Number(document.querySelector('#angle1').value);
+    const angle2 = Number(document.querySelector('#angle2').value);
+    const angle3 = Number(document.querySelector('#angle3').value);
+    
+    if (angle1 + angle2 + angle3 === 180) {
+        triangleOutput.innerHTML = "<h1>Yay, the angles form a triangle!</h1>";
+    } else if(!angle1 || !angle2 || !angle3) {
+        triangleOutput.innerHTML = "<h1>Please enter all the fields!</h1>"
+    } else {
+        triangleOutput.innerHTML = "<h1>Oh Oh! The angle doesn't form a triangle</h1>";
     }
 }
 
 if (btnTriangle) {
-    btnTriangle.addEventListener('click', checkIfTriangle)
+    btnTriangle.addEventListener('click', checkIfTriangle);
 }
