@@ -75,3 +75,11 @@ input[type=number]:focus{
     padding-bottom: 5em;
 }
 
+@media (min-width: 280px) and (max-width: 768px) {
+    body{
+        font-size: 15px;
+    }
+    ul li{
+        display: block;
+    }
+}
