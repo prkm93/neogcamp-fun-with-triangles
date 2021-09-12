@@ -120,11 +120,36 @@ const calculateHypotenuse = (e) => {
     if (!base || !height) {
         outputHypotenuse.innerHTML = `<h2 class="error">Please enter both the fields</h2>`;
     } else {
-        const hypotenuse = Math.sqrt((base*base) + (height*height));
+        const hypotenuse = Math.sqrt((base*base) + (height*height)).toFixed(2);
         outputHypotenuse.innerHTML = `<h2 class="success">The length of hypotenuse is ${hypotenuse}</h2>`;
     }
 }
 
 if (btnHypotenuse) {
     btnHypotenuse.addEventListener('click', calculateHypotenuse);
+}
+
+/** Calculate area logic */
+
+const btnArea = document.querySelector('#btn-submit-area');
+const outputArea = document.querySelector("#output-area");
+
+const calculateArea= (e) => {
+    e.preventDefault();
+
+    const side1 = Number(document.querySelector('#side1').value);
+    const side2 = Number(document.querySelector('#side2').value); 
+    const side3 = Number(document.querySelector('#side3').value);
+
+    if (!side1 || !side2 || !side3) {
+        outputArea.innerHTML = `<h2 class="error">Please enter all the fields</h2>`;
+    } else {
+        const s = (side1 + side2 + side3)/2;
+        const area = Math.sqrt(s *(s - side1) *(s - side2) * (s - side3)).toFixed(2);
+        outputArea.innerHTML = `<h2 class="success">The area of triangle is ${area}</h2>`;
+    }
+}
+
+if (btnArea) {
+    btnArea.addEventListener('click', calculateArea);
 }
