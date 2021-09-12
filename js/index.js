@@ -59,7 +59,7 @@ const calculateScore = () => {
             score++;
         }
     }
-    console.log(score);
+    outputResult.innerHTML = `<h2>Your score is ${score}</h2>`
 }
 
 submitBtn.addEventListener('click', calculateScore);
