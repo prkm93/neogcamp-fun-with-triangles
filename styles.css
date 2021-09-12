@@ -39,16 +39,12 @@ section{
 .footer{
     margin: 1em 0;
 }
-#btn-submit-quiz, #btn-submit-triangle{
-    padding: 1em;
-    border: none;
-    border-radius: 10px;
-    font-size: 0.8em;
-    margin-top: -20px;
-    background:rgb(252, 153, 153);
-    cursor:pointer;
+.error{
+    color: red;
 }
-
+.success{
+    color: rgb(13, 151, 13);
+}
 /* Is Triangle styles */
 .angle-input{
     margin: 1em;
@@ -63,3 +59,20 @@ input[type=number]{
 input[type=number]:focus{
     outline: none;
 }
+#output-triangle{
+    padding-bottom: 5em;
+}
+/* Common button styles */
+#btn-submit-quiz, #btn-submit-triangle, #btn-submit-hypo{
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-top: -20px;
+    background:rgb(252, 153, 153);
+    cursor:pointer;
+}  
+#output-hypotenuse{
+    padding-bottom: 4em;
+}
+

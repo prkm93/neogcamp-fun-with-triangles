@@ -62,7 +62,12 @@ const calculateScore = () => {
             score++;
         }
     }
-    outputResult.innerHTML = `<h2>Your score is ${score}</h2>`
+    if (score <4) {
+        outputResult.innerHTML = `<h2 class="error">Your score is ${score}</h2>`;
+    } else {
+        outputResult.innerHTML = `<h2 class="success">Your score is ${score}</h2>`
+    }
+    
 }
 
 if (submitBtn) {
@@ -73,7 +78,6 @@ document.addEventListener('DOMContentLoaded', renderQuestions);
 
 /** Is Triangle Logic */
 
-const anglesValue = document.querySelector('#is-triangle');
 const btnTriangle = document.querySelector('#btn-submit-triangle');
 const triangleOutput = document.querySelector('#output-triangle');
 
@@ -86,14 +90,41 @@ const checkIfTriangle = (e) => {
     const angle3 = Number(document.querySelector('#angle3').value);
     
     if (angle1 + angle2 + angle3 === 180) {
-        triangleOutput.innerHTML = "<h1>Yay, the angles form a triangle!</h1>";
+        triangleOutput.innerHTML = "<h1 class='success'>Yay, the angles form a triangle!</h1>";
     } else if(!angle1 || !angle2 || !angle3) {
-        triangleOutput.innerHTML = "<h1>Please enter all the fields!</h1>"
+        triangleOutput.innerHTML = "<h1 class='error'>Please enter all the fields!</h1>"
     } else {
-        triangleOutput.innerHTML = "<h1>Oh Oh! The angle doesn't form a triangle</h1>";
+        triangleOutput.innerHTML = "<h1 class='error'>Oh Oh! The angle doesn't form a triangle</h1>";
     }
 }
 
 if (btnTriangle) {
     btnTriangle.addEventListener('click', checkIfTriangle);
+}
+
+
+/** Calculate Hypotenuse Logic */
+
+const btnHypotenuse = document.querySelector('#btn-submit-hypo');
+const outputHypotenuse = document.querySelector('#output-hypotenuse');
+
+const calculateHypotenuse = (e) => {
+    e.preventDefault();
+
+    const base = Number(document.querySelector('#base').value);
+    const height = Number(document.querySelector('#height').value);
+
+    console.log(base);
+    console.log(height);
+
+    if (!base || !height) {
+        outputHypotenuse.innerHTML = `<h2 class="error">Please enter both the fields</h2>`;
+    } else {
+        const hypotenuse = Math.sqrt((base*base) + (height*height));
+        outputHypotenuse.innerHTML = `<h2 class="success">The length of hypotenuse is ${hypotenuse}</h2>`;
+    }
+}
+
+if (btnHypotenuse) {
+    btnHypotenuse.addEventListener('click', calculateHypotenuse);
 }
