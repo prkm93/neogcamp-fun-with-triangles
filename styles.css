@@ -5,7 +5,7 @@ body{
     font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     padding: 0;
-    font-size: 20px;
+    font-size: 23px;
 }
 .navbar{
     display: flex;
@@ -30,4 +30,16 @@ section{
 }
 .header{
     font-size: 2em;
+}
+
+.each-question{
+    margin: 3em 0;
+}
+#btn-submit{
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-top: -20px;
+    background:rgb(255, 98, 98);
 }
