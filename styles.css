@@ -60,12 +60,9 @@ input[type=number]{
 input[type=number]:focus{
     outline: none;
 }
-#output-triangle{
-    padding-bottom: 5em;
-}
 
 /* Common button styles */
-#btn-submit-quiz, #btn-submit-triangle, #btn-submit-hypo{
+#btn-submit-quiz, #btn-submit-triangle, #btn-submit-hypo, #btn-submit-area{
     padding: 1em;
     border: none;
     border-radius: 10px;
@@ -74,7 +71,7 @@ input[type=number]:focus{
     background:rgb(252, 153, 153);
     cursor:pointer;
 }  
-#output-hypotenuse{
-    padding-bottom: 4em;
+#output-hypotenuse, #output-triangle, #output-area, #output-result{
+    padding-bottom: 5em;
 }
 
