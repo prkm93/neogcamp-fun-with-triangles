@@ -31,9 +31,11 @@ section{
 .header{
     font-size: 2em;
 }
-
 .each-question{
     margin: 3em 0;
+}
+.footer{
+    margin: 1em 0;
 }
 #btn-submit{
     padding: 1em;
@@ -42,4 +44,5 @@ section{
     font-size: 0.8em;
     margin-top: -20px;
     background:rgb(255, 98, 98);
+    cursor:pointer;
 }

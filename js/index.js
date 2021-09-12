@@ -1,8 +1,8 @@
 import {quiz} from './data.js';
+
 const quizSection = document.querySelector('#questions');
 const submitBtn = document.querySelector('#btn-submit');
-
-console.log(quiz);
+const outputResult = document.querySelector('#output-result');
 
 const renderQuestions = () => {
 
@@ -11,6 +11,8 @@ const renderQuestions = () => {
         const uniqueItem0 = `${item.o[0].split(" ").join("")}`;
         const uniqueItem1 = `${item.o[1].split(" ").join("")}`;
         const uniqueItem2 = `${item.o[2].split(" ").join("")}`;
+
+        //template for questions
         const questionTemplate = `<div class="each-question">
                                     <p>${item.q}</p>
                                     <input type="radio" name=${i}  value=${uniqueItem0}>
@@ -19,13 +21,46 @@ const renderQuestions = () => {
                                     <label for=${uniqueItem1}>${uniqueItem1}</label>
                                     <input type="radio" name=${i}  value=${uniqueItem2}>
                                     <label for=${uniqueItem2}>${uniqueItem2}</label>
-                                  </div>`;  
+                                  </div>`; 
+        // rendering questions and answers
         quizSection.innerHTML += questionTemplate;
     })
-    
+
 }
 
+const calculateScore = () => {
+    let score = 0;
+    let answerArrays = [];
 
-console.log(quizSection);
+    // extracting correct answers from data
+    const correctAnswers = quiz.map((item, i) => {
+        return [i.toString(),item.a];
+    })
+    
+    // converting list of correct answers to object
+    const objectOfCorrectAnswers = Object.fromEntries(correctAnswers);
+    console.log(objectOfCorrectAnswers);
 
+    // collecting user answers from form
+    const formData = new FormData(quizSection);
+
+    // extracting user selected answers
+    for (let answer of formData.entries()) {
+        answerArrays.push(answer);
+    }
+
+    // converting answer array to object
+    const answerObject = Object.fromEntries(answerArrays);
+    console.log(answerObject);
+
+    // calculating score
+    for (let answer in answerObject) {
+        if (objectOfCorrectAnswers[answer] === answerObject[answer]) {
+            score++;
+        }
+    }
+    console.log(score);
+}
+
+submitBtn.addEventListener('click', calculateScore);
 document.addEventListener('DOMContentLoaded', renderQuestions);
