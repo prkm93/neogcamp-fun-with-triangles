@@ -37,12 +37,36 @@ section{
 .footer{
     margin: 1em 0;
 }
-#btn-submit{
+#btn-submit-quiz{
     padding: 1em;
     border: none;
     border-radius: 10px;
     font-size: 0.8em;
     margin-top: -20px;
     background:rgb(255, 98, 98);
+    cursor:pointer;
+}
+
+/* Is Triangle styles */
+.angle-input{
+    margin: 1em;
+}
+input[type=number]{
+    border: 1px solid rgb(255, 166, 166);
+    padding: 1em;
+    margin: 1em;
+    width: 15%;
+    border-radius: 10px;
+}
+input[type=number]:focus{
+    outline: none;
+}
+#btn-submit-triangle{
+    padding: 1em;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-top: -20px;
+    background:rgb(252, 153, 153);
     cursor:pointer;
 }

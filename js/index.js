@@ -1,7 +1,7 @@
 import {quiz} from './data.js';
 
 const quizSection = document.querySelector('#questions');
-const submitBtn = document.querySelector('#btn-submit');
+const submitBtn = document.querySelector('#btn-submit-quiz');
 const outputResult = document.querySelector('#output-result');
 
 const renderQuestions = () => {
