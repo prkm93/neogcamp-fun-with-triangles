@@ -45,6 +45,7 @@ section{
 .success{
     color: rgb(13, 151, 13);
 }
+
 /* Is Triangle styles */
 .angle-input{
     margin: 1em;
@@ -62,6 +63,7 @@ input[type=number]:focus{
 #output-triangle{
     padding-bottom: 5em;
 }
+
 /* Common button styles */
 #btn-submit-quiz, #btn-submit-triangle, #btn-submit-hypo{
     padding: 1em;
