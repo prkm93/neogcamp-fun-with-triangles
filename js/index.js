@@ -1,3 +1,4 @@
+/** QUIZ Logic */
 import {quiz} from './data.js';
 
 const quizSection = document.querySelector('#questions');
@@ -23,7 +24,9 @@ const renderQuestions = () => {
                                     <label for=${uniqueItem2}>${uniqueItem2}</label>
                                   </div>`; 
         // rendering questions and answers
-        quizSection.innerHTML += questionTemplate;
+        if (quizSection) {
+            quizSection.innerHTML += questionTemplate;
+        }
     })
 
 }
@@ -62,5 +65,27 @@ const calculateScore = () => {
     outputResult.innerHTML = `<h2>Your score is ${score}</h2>`
 }
 
-submitBtn.addEventListener('click', calculateScore);
+if (submitBtn){
+    submitBtn.addEventListener('click', calculateScore);
+}
 document.addEventListener('DOMContentLoaded', renderQuestions);
+
+
+/** Is Triangle Logic */
+
+const anglesValue = document.querySelector('#is-triangle');
+const btnTriangle = document.querySelector('#btn-submit-triangle');
+
+const checkIfTriangle = (e) => {
+    e.preventDefault();
+    const angles = [];
+    const formData = new FormData(anglesValue);
+
+    for(let i in formData.entries()){
+        
+    }
+}
+
+if (btnTriangle) {
+    btnTriangle.addEventListener('click', checkIfTriangle)
+}

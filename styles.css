@@ -25,6 +25,8 @@ a{
 a:visited{
     color: black;
 }
+
+/* common styling for section*/
 section{
     text-align: center;
 }
@@ -37,13 +39,13 @@ section{
 .footer{
     margin: 1em 0;
 }
-#btn-submit-quiz{
+#btn-submit-quiz, #btn-submit-triangle{
     padding: 1em;
     border: none;
     border-radius: 10px;
     font-size: 0.8em;
     margin-top: -20px;
-    background:rgb(255, 98, 98);
+    background:rgb(252, 153, 153);
     cursor:pointer;
 }
 
@@ -60,13 +62,4 @@ input[type=number]{
 }
 input[type=number]:focus{
     outline: none;
-}
-#btn-submit-triangle{
-    padding: 1em;
-    border: none;
-    border-radius: 10px;
-    font-size: 0.8em;
-    margin-top: -20px;
-    background:rgb(252, 153, 153);
-    cursor:pointer;
 }
